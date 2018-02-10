@@ -1,16 +1,16 @@
 {
-  "name": "hyperapp2000",
+  "name": "demolatar-hyperapp",
   "version": "1.0.0",
-  "description": "Hyperapp boilerplate with webpack, typescript and sass",
+  "description": "Hyperapp Demolåtar client",
   "scripts": {
-    "wipe":
-      "rm -rf .git && git init && git add . && git commit -m 'Initial commit✨'",
     "start": "webpack-dev-server",
     "build": "webpack --env production",
     "test": "jest --coverage --no-cache",
     "prettify": "prettier --write \"{src,test}/**/*.{js,ts,tsx}\""
   },
-  "pre-commit": ["prettify"],
+  "pre-commit": [
+    "prettify"
+  ],
   "keywords": [],
   "author": "Daniel Hägglund <daniel.hagglund+github@gmail.com>",
   "repository": {
@@ -18,6 +18,7 @@
     "url": "git+https://github.com/judas-christ/hyperapp2000.git"
   },
   "dependencies": {
+    "@hyperapp/router": "^0.4.1",
     "hyperapp": "^1.1.1"
   },
   "devDependencies": {

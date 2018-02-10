@@ -1,3 +1,7 @@
+import { location } from '@hyperapp/router'
+
 export default {
-  num: 0
+  location: location.state,
+  latest: null,
+  searchResult: null
 }

@@ -44,6 +44,14 @@ module.exports = function webpackStuff(env) {
         }
       ]
     },
-    plugins
+    plugins,
+    devServer: {
+      proxy: {
+        '/api': {
+          target: 'http://www.demolatar.se',
+          changeOrigin: true
+        }
+      }
+    }
   }
 }

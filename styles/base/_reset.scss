@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #f0f0f0 0,
+    #f0f0f0 1px,
+    #e7e7e7 2px, #f0f0f0 3px
+  );
+  background-repeat: repeat;
+  background-color: #f0f0f0;
+  background-size: 4px 4px;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
