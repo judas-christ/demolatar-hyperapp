@@ -1,0 +1,9 @@
+.song {
+  display: flex;
+  justify-content: space-between;
+
+  &__title,
+  &__artist {
+    display: block;
+  }
+}

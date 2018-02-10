@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@hyperapp/router": "^0.4.1",
+    "date-fns": "^1.29.0",
     "hyperapp": "^1.1.1"
   },
   "devDependencies": {

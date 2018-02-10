@@ -4,12 +4,14 @@ html {
     45deg,
     #f0f0f0 0,
     #f0f0f0 1px,
-    #e7e7e7 2px, #f0f0f0 3px
+    #e7e7e7 2px,
+    #f0f0f0 3px
   );
   background-repeat: repeat;
   background-color: #f0f0f0;
   background-size: 4px 4px;
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
+  line-height: 1.4;
 }
 
 body {
@@ -20,4 +22,5 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: inherit;
 }

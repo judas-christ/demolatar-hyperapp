@@ -6,4 +6,4 @@ import { location } from '@hyperapp/router'
 
 const main = app(state, actions, view, document.body)
 const unsubscribe = location.subscribe(main.location)
-main.getLatest(5)
+main.getLatest(10)

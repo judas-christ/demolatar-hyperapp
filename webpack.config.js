@@ -46,6 +46,7 @@ module.exports = function webpackStuff(env) {
     },
     plugins,
     devServer: {
+      historyApiFallback: true,
       proxy: {
         '/api': {
           target: 'http://www.demolatar.se',
