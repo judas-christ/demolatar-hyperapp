@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
 
+  @media screen and (orientation: portrait) {
+    padding-top: 4rem;
+  }
+
   @media screen and (orientation: landscape) {
     flex-direction: row;
     min-height: 100vh;

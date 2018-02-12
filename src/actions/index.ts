@@ -10,15 +10,12 @@ interface ITrack {
 
 export default {
   location: location.actions,
-  setSearchQuery: (query: string) => () => ({ searchQuery: query }),
+  setSearchQuery: (query: string) => ({ searchQuery: query }),
   search: () => (state, actions) =>
     fetch(`/api/search.php?q=${encodeURIComponent(state.searchQuery)}`)
       .then(resp => resp.json())
       .then(actions.setSearchResult),
-  setSearchResult: (songs: Array<ITrack>) => () => {
-    console.log('setSearchResults', songs)
-    return { searchResult: songs }
-  },
+  setSearchResult: (songs: Array<ITrack>) => ({ searchResult: songs }),
   getBandTracks: (name: string) => (state, actions) =>
     fetch(`/api/getBandTracks.php?q=${encodeURIComponent(name)}`)
       .then(resp => resp.json())
@@ -29,6 +26,8 @@ export default {
     fetch(`/api/getLatestTracks.php?q=${count}`)
       .then(resp => resp.json())
       .then(actions.setLatest),
-  setLatest: (songs: Array<ITrack>) => () => ({ latest: songs }),
-  play: (song: ITrack) => () => ({ nowPlaying: song })
+  setLatest: (songs: Array<ITrack>) => ({ latest: songs }),
+  play: (song?: ITrack) =>
+    song ? { nowPlaying: song, isPlaying: true } : { isPlaying: true },
+  pause: () => ({ isPlaying: false })
 }

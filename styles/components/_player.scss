@@ -6,4 +6,47 @@
   width: 100%;
   background-color: #fff;
   padding: 0.5rem 1rem;
+  display: flex;
+
+  &__content {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  &__artist {
+    font-weight: 700;
+  }
+
+  &__play-pause {
+    width: 3rem;
+    font-size: 1.5rem;
+    line-height: 2;
+    background: transparent;
+    border-radius: 1.5rem;
+    border: 1px solid #e0e0e0;
+    padding: 0;
+    margin: -1px 0;
+    box-sizing: content-box;
+    text-align: center;
+
+    &:before {
+      content: '►';
+    }
+  }
+
+  &--playing &__play-pause {
+    &:before {
+      content: '❚❚';
+    }
+  }
+
+  &__progress {
+    background: #e0e0e0;
+  }
+
+  &__progress-bar {
+    height: 0.2rem;
+    width: 0;
+    background-color: black;
+  }
 }

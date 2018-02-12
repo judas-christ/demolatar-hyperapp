@@ -4,6 +4,7 @@ import Home from './Home'
 import { Switch, Route, location } from '@hyperapp/router'
 import Search from './Search'
 import AudioPlayer from './AudioPlayer'
+import About from './About'
 
 export default (state, actions) => (
   <div class="app">
@@ -25,7 +26,13 @@ export default (state, actions) => (
           )
         }
       />
-      <AudioPlayer song={state.nowPlaying} />
+      <Route path="/about" render={About} />
+      <AudioPlayer
+        song={state.nowPlaying}
+        isPlaying={state.isPlaying}
+        play={actions.play}
+        pause={actions.pause}
+      />
     </main>
   </div>
 )

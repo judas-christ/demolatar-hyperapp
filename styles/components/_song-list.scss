@@ -1,11 +1,13 @@
 .song-list {
   margin: 0;
   padding: 0;
+
   &__item {
     display: block;
     margin-bottom: 1rem;
   }
   &__date {
     color: #999;
+    font-size: rem(12px);
   }
 }

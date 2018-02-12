@@ -5,5 +5,6 @@ export default {
   latest: null,
   searchQuery: '',
   searchResult: null,
-  nowPlaying: null
+  nowPlaying: null,
+  isPlaying: false
 }

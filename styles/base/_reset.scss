@@ -7,11 +7,13 @@ html {
     #e7e7e7 2px,
     #f0f0f0 3px
   );
+  background-attachment: fixed;
   background-repeat: repeat;
   background-color: #f0f0f0;
   background-size: 4px 4px;
   font-family: Roboto, sans-serif;
   line-height: 1.4;
+  color: $color-text;
 }
 
 body {
@@ -23,4 +25,36 @@ body {
 *:after {
   box-sizing: inherit;
   font-family: inherit;
+  font-size: inherit;
+}
+
+button,
+a {
+  outline: 0;
+}
+
+button,
+a,
+label {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 1.4em;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
 }

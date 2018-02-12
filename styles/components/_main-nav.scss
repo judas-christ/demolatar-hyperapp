@@ -1,0 +1,56 @@
+.main-nav {
+  background: $color-brand;
+  padding: 1rem;
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+
+  &__content {
+    position: sticky;
+    top: 1rem;
+  }
+
+  svg,
+  img {
+    vertical-align: middle;
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0 0 0 2rem;
+    width: 2rem;
+    vertical-align: middle;
+    fill: $color-text;
+
+    &:hover {
+      fill: mix($color-text, $color-brand, 50%);
+    }
+  }
+
+  &__logo-img {
+    height: 2rem;
+    width: auto;
+  }
+
+  @media screen and (orientation: portrait) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  @media screen and (orientation: landscape) {
+    flex: 0 0 5rem;
+
+    &__logo-img {
+      width: 3rem;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    &__link {
+      display: block;
+      margin: 0 auto 1rem;
+      width: 2rem;
+    }
+  }
+}
