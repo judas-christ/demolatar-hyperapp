@@ -16,11 +16,17 @@
 
   &__play-button {
     display: block;
+    width: 100%;
     appearance: none;
     border: 0;
     background: transparent;
     text-align: left;
     padding: 0;
     margin: 0;
+
+    .focus-on &:focus {
+      text-decoration: underline;
+      text-decoration-color: opacify($color-text, 0.5);
+    }
   }
 }

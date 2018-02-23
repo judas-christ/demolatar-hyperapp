@@ -1,5 +1,5 @@
 .main-nav {
-  background: $color-brand;
+  background: $color-text;
   padding: 1rem;
   font-weight: 700;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
@@ -19,10 +19,17 @@
     margin: 0 0 0 2rem;
     width: 2rem;
     vertical-align: middle;
-    fill: $color-text;
+    fill: #fff;
 
-    &:hover {
-      fill: mix($color-text, $color-brand, 50%);
+    &:hover,
+    &:focus {
+      fill: mix($color-brand, #fff, 50%);
+    }
+
+    &--active,
+    &--active:hover,
+    &--active:focus {
+      fill: $color-brand;
     }
   }
 

@@ -19,24 +19,23 @@
 
   &__play-pause {
     width: 3rem;
-    font-size: 1.5rem;
-    line-height: 2;
+    height: 3rem;
     background: transparent;
     border-radius: 1.5rem;
     border: 1px solid #e0e0e0;
-    padding: 0;
+    padding: 0.5rem;
     margin: -1px 0;
-    box-sizing: content-box;
-    text-align: center;
 
-    &:before {
-      content: '►';
+    svg {
+      width: 1.5rem;
+      display: block;
+      margin-left: auto;
     }
   }
 
   &--playing &__play-pause {
-    &:before {
-      content: '❚❚';
+    svg {
+      margin-right: auto;
     }
   }
 

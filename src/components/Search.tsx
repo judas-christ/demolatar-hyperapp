@@ -11,7 +11,7 @@ export default (
 ) => (
   <div>
     <form class="search-form" onsubmit={e => search() && e.preventDefault()}>
-      <button type="submit" class="search-form__button">
+      <button type="submit" class="search-form__button" tabIndex="-1">
         <SearchIcon />
       </button>
       <input

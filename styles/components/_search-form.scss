@@ -1,21 +1,18 @@
 .search-form {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1em;
 
-  &__label {
-    display: block;
-    flex: 1 0 100%;
-    color: #999;
-    font-size: rem(12px);
-  }
   &__input {
     font-size: inherit;
+    font-weight: inherit;
     line-height: inherit;
     flex-grow: 1;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #999;
+    border-bottom: 3px solid #999;
     outline: 0;
     &:focus {
       border-bottom-color: $color-brand;
@@ -24,7 +21,7 @@
   &__button {
     line-height: inherit;
     border: 0;
-    width: 2rem;
+    width: 2em;
     vertical-align: middle;
     background: transparent;
     svg {

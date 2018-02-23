@@ -8,7 +8,7 @@ import About from './About'
 
 export default (state, actions) => (
   <div class="app">
-    <Nav />
+    <Nav path={state.location.pathname} />
     <main class="main-content">
       <Route
         path="/"
