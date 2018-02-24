@@ -18,6 +18,7 @@ export default (state, actions) => (
         path="/search"
         render={() =>
           Search(
+            state.isSearching,
             state.searchResult,
             actions.setSearchQuery,
             actions.search,

@@ -6,5 +6,6 @@ export default {
   searchQuery: '',
   searchResult: null,
   nowPlaying: null,
+  isSearching: false,
   isPlaying: false
 }

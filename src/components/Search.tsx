@@ -1,8 +1,10 @@
 import { h } from 'hyperapp'
 import Song from './Song'
 import SearchIcon from './SearchIcon'
+import Loading from './Loading'
 
 export default (
+  isSearching,
   searchResult,
   setSearchQuery: Function,
   search: Function,
@@ -20,7 +22,8 @@ export default (
         oninput={e => setSearchQuery(e.target.value)}
       />
     </form>
-    {searchResult ? (
+    {isSearching ? <Loading /> : null}
+    {!isSearching && searchResult ? (
       <ul class="song-list">
         {searchResult.map(song => (
           <li class="song-list__item">

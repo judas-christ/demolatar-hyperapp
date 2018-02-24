@@ -11,11 +11,17 @@ interface ITrack {
 export default {
   location: location.actions,
   setSearchQuery: (query: string) => ({ searchQuery: query }),
-  search: () => (state, actions) =>
-    fetch(`/api/search.php?q=${encodeURIComponent(state.searchQuery)}`)
+  search: () => (state, actions) => {
+    actions.setSearching()
+    return fetch(`/api/search.php?q=${encodeURIComponent(state.searchQuery)}`)
       .then(resp => resp.json())
-      .then(actions.setSearchResult),
-  setSearchResult: (songs: Array<ITrack>) => ({ searchResult: songs }),
+      .then(actions.setSearchResult)
+  },
+  setSearching: () => ({ isSearching: true }),
+  setSearchResult: (songs: Array<ITrack>) => ({
+    isSearching: false,
+    searchResult: songs
+  }),
   getBandTracks: (name: string) => (state, actions) =>
     fetch(`/api/getBandTracks.php?q=${encodeURIComponent(name)}`)
       .then(resp => resp.json())
