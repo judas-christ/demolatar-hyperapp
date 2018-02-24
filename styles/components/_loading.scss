@@ -1,0 +1,30 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  &__icon {
+    width: 5rem;
+  }
+
+  circle {
+    animation: loading-circle 0.45s ease-in-out infinite alternate-reverse;
+    @each $n in 1, 2, 3 {
+      &:nth-child(#{$n}) {
+        transform-origin: percentage($n / 4) center;
+        animation-delay: (4 - $n) * -0.3s;
+      }
+    }
+  }
+}
+
+@keyframes loading-circle {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

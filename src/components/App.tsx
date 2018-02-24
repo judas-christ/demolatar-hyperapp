@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
 import Nav from './Nav'
 import Home from './Home'
-import { Switch, Route, location } from '@hyperapp/router'
+import { Switch, Route } from '@hyperapp/router'
 import Search from './Search'
 import AudioPlayer from './AudioPlayer'
 import About from './About'
