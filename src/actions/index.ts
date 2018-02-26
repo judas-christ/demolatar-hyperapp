@@ -12,6 +12,8 @@ export default {
   location: location.actions,
   setSearchQuery: (query: string) => ({ searchQuery: query }),
   search: () => (state, actions) => {
+    // make sure they've entered something before searching
+    if (!state.searchQuery) return
     actions.setSearching()
     return fetch(`/api/search.php?q=${encodeURIComponent(state.searchQuery)}`)
       .then(resp => resp.json())

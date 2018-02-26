@@ -1,6 +1,6 @@
 .search-form {
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-end;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1em;
@@ -14,18 +14,33 @@
     border: 0;
     border-bottom: 3px solid #999;
     outline: 0;
+    padding-right: 1em;
     &:focus {
       border-bottom-color: $color-brand;
     }
   }
+
   &__button {
     line-height: inherit;
     border: 0;
-    width: 2em;
+    width: 1.5em;
+    margin-left: -0.3em;
+    margin-right: 0.2em;
     vertical-align: middle;
     background: transparent;
     svg {
       vertical-align: middle;
+    }
+  }
+
+  &__clear-button {
+    line-height: inherit;
+    border: 0;
+    width: 1em;
+    margin-left: -0.8em;
+    vertical-align: middle;
+    background: transparent;
+    svg {
     }
   }
 }

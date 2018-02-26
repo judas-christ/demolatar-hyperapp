@@ -2,16 +2,21 @@ import { h } from 'hyperapp'
 import PauseIcon from './PauseIcon'
 import PlayIcon from './PlayIcon'
 
-export default ({ song, isPlaying, play, pause }) =>
-  song ? (
-    <div class={isPlaying ? 'player player--playing' : 'player'}>
-      {console.log('isPlaying', isPlaying)}
-      <button
-        className="player__play-pause"
-        onclick={() => (isPlaying ? pause() : play())}
-      >
-        {isPlaying ? <PauseIcon /> : <PlayIcon />}
-      </button>
+export default ({ song, isPlaying, play, pause }) => (
+  <div
+    class={
+      !song
+        ? 'player player--hidden'
+        : isPlaying ? 'player player--playing' : 'player'
+    }
+  >
+    <button
+      className="player__play-pause"
+      onclick={() => (isPlaying ? pause() : play())}
+    >
+      {isPlaying ? <PauseIcon /> : <PlayIcon />}
+    </button>
+    {song ? (
       <div class="player__content">
         <div class="player__artist">{song.band}</div>
         <div class="player__title">{song.track}</div>
@@ -41,5 +46,6 @@ export default ({ song, isPlaying, play, pause }) =>
           />
         </div>
       </div>
-    </div>
-  ) : null
+    ) : null}
+  </div>
+)

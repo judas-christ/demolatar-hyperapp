@@ -6,9 +6,6 @@ export default ({ path }) => (
   <nav class="main-nav">
     {console.log(path)}
     <div className="main-nav__content">
-      <a href="http://www.demolatar.se" class="main-nav__logo" target="_blank">
-        <img src="/images/logo.gif" class="main-nav__logo-img" />
-      </a>
       <Link
         to="/"
         class={
