@@ -1,12 +1,5 @@
 import { location } from '@hyperapp/router'
-
-interface ITrack {
-  id: string
-  date: string
-  band: string
-  track: string
-  trackling: string
-}
+import { transformSongs, ITrack } from '../lib/transform-song'
 
 export default {
   location: location.actions,
@@ -19,22 +12,25 @@ export default {
       `${API_PATH}/api/search.php?q=${encodeURIComponent(state.searchQuery)}`
     )
       .then(resp => resp.json())
+      .then(transformSongs)
       .then(actions.setSearchResult)
   },
   setSearching: () => ({ isSearching: true }),
-  setSearchResult: (songs: Array<ITrack>) => ({
+  setSearchResult: (songs: ITrack[]) => ({
     isSearching: false,
     searchResult: songs
   }),
   getBandTracks: (name: string) => (state, actions) =>
     fetch(`${API_PATH}/api/getBandTracks.php?q=${encodeURIComponent(name)}`)
       .then(resp => resp.json())
+      .then(transformSongs)
       .then(
         data => actions.setSearchResult(data) && actions.location.go('/search')
       ),
   getLatest: (count: Number) => (state, actions) =>
     fetch(`${API_PATH}/api/getLatestTracks.php?q=${count}`)
       .then(resp => resp.json())
+      .then(transformSongs)
       .then(actions.setLatest),
   setLatest: (songs: Array<ITrack>) => ({ latest: songs }),
   play: (song?: ITrack) =>

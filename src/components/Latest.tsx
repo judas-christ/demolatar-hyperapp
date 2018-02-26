@@ -8,7 +8,7 @@ export default ({ songs, play, getBandTracks }) => (
       <li class="song-list__item">
         <Song song={song} play={play} getBandTracks={getBandTracks} />
         <div className="song-list__date">
-          {distanceInWordsToNow(new Date(song.date))} ago
+          {distanceInWordsToNow(song.date)} ago
         </div>
       </li>
     ))}
