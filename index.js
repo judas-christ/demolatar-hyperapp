@@ -1,5 +1,6 @@
 const send = require('koa-send')
 const proxy = require('koa-proxy')
+const compress = require('koa-compress')
 const Koa = require('koa')
 const app = new Koa()
 
@@ -13,6 +14,8 @@ app.use(
   })
 )
 
+app.use(compress())
+
 app.use(async ctx => {
   switch (ctx.path) {
     case '/images/logo.gif':
@@ -20,9 +23,11 @@ app.use(async ctx => {
       break
     case '/app.css':
     case '/app.js':
+      ctx.compress = true
       await send(ctx, `public${ctx.path}`)
       break
     default:
+      ctx.compress = true
       await send(ctx, 'public/index.html')
   }
 })

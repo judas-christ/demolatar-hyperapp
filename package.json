@@ -14,7 +14,9 @@
     "start": "node index.js",
     "heroku-postbuild": "npm run build"
   },
-  "pre-commit": ["prettify"],
+  "pre-commit": [
+    "prettify"
+  ],
   "keywords": [],
   "author": "Daniel Hägglund <daniel.hagglund+github@gmail.com>",
   "repository": {
@@ -26,6 +28,7 @@
     "date-fns": "^1.29.0",
     "hyperapp": "^1.1.1",
     "koa": "^2.5.0",
+    "koa-compress": "^2.0.0",
     "koa-proxy": "^0.9.0",
     "koa-send": "^4.1.3"
   },
