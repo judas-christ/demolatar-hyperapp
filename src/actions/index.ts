@@ -15,7 +15,9 @@ export default {
     // make sure they've entered something before searching
     if (!state.searchQuery) return
     actions.setSearching()
-    return fetch(`/api/search.php?q=${encodeURIComponent(state.searchQuery)}`)
+    return fetch(
+      `${API_PATH}/api/search.php?q=${encodeURIComponent(state.searchQuery)}`
+    )
       .then(resp => resp.json())
       .then(actions.setSearchResult)
   },
@@ -25,13 +27,13 @@ export default {
     searchResult: songs
   }),
   getBandTracks: (name: string) => (state, actions) =>
-    fetch(`/api/getBandTracks.php?q=${encodeURIComponent(name)}`)
+    fetch(`${API_PATH}/api/getBandTracks.php?q=${encodeURIComponent(name)}`)
       .then(resp => resp.json())
       .then(
         data => actions.setSearchResult(data) && actions.location.go('/search')
       ),
   getLatest: (count: Number) => (state, actions) =>
-    fetch(`/api/getLatestTracks.php?q=${count}`)
+    fetch(`${API_PATH}/api/getLatestTracks.php?q=${count}`)
       .then(resp => resp.json())
       .then(actions.setLatest),
   setLatest: (songs: Array<ITrack>) => ({ latest: songs }),

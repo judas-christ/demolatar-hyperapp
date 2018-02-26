@@ -4,7 +4,6 @@ import SearchIcon from './SearchIcon'
 
 export default ({ path }) => (
   <nav class="main-nav">
-    {console.log(path)}
     <div className="main-nav__content">
       <Link
         to="/"

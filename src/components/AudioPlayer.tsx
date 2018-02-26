@@ -30,7 +30,6 @@ export default ({ song, isPlaying, play, pause }) => (
             class="player__progress-bar"
             oncreate={el => {
               const audio = el.parentNode.previousElementSibling
-              console.log('is this an audio?', audio)
               const intervalId = setInterval(() => {
                 const duration = audio.duration
                 const currentTime = audio.currentTime

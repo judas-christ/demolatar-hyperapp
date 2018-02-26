@@ -1,6 +1,7 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
 const plugins = [
@@ -8,7 +9,15 @@ const plugins = [
     filename: './app.css',
     allChunks: true
   }),
-  new webpack.optimize.ModuleConcatenationPlugin()
+  new webpack.optimize.ModuleConcatenationPlugin(),
+  new HtmlWebpackPlugin({
+    template: 'index.html',
+    minify: {
+      removeComments: true,
+      removeAttributeQuotes: true,
+      collapseWhitespace: true
+    }
+  })
 ]
 
 module.exports = function webpackStuff(env) {
@@ -18,7 +27,19 @@ module.exports = function webpackStuff(env) {
         parallel: 4
       })
     )
+    // plugins.push(
+    //   new webpack.DefinePlugin({
+    //     API_PATH: JSON.stringify('http://www.demolatar.se')
+    //   })
+    // )
   }
+  //else {
+  plugins.push(
+    new webpack.DefinePlugin({
+      API_PATH: JSON.stringify('')
+    })
+  )
+  //}
 
   return {
     entry: ['./src/index.ts', './styles/app.scss'],
