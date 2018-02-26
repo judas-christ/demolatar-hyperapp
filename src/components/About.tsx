@@ -8,6 +8,7 @@ export default () => (
       <a href="http://www.demolatar.se">Demolåtar.se</a>. Vi tar inget som helst
       ansvar för kvaliteten på den så kallade musiken. Lyssna på egen risk.
     </p>
+    <p>Lägg till sidan på hemskärmen på din mobil för bästa upplevelse.</p>
     <p class="text--center">
       <a href="http://www.demolatar.se" target="_blank">
         <img src="/images/logo.gif" alt="Demolåtar.se" />
