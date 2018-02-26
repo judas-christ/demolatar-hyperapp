@@ -39,6 +39,7 @@ button,
 a,
 label {
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 h1 {

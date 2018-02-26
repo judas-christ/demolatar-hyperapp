@@ -7,16 +7,14 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --host 0.0.0.0",
     "build": "webpack --env production",
     "test": "jest --coverage --no-cache",
     "prettify": "prettier --write \"{src,test}/**/*.{js,ts,tsx}\"",
     "start": "node index.js",
     "heroku-postbuild": "npm run build"
   },
-  "pre-commit": [
-    "prettify"
-  ],
+  "pre-commit": ["prettify"],
   "keywords": [],
   "author": "Daniel Hägglund <daniel.hagglund+github@gmail.com>",
   "repository": {
