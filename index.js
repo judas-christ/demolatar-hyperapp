@@ -15,6 +15,9 @@ app.use(
 
 app.use(async ctx => {
   switch (ctx.path) {
+    case '/images/logo.gif':
+      await send(ctx, 'images/logo.gif')
+      break
     case '/app.css':
     case '/app.js':
       await send(ctx, `public${ctx.path}`)
